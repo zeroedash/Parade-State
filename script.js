@@ -62,3 +62,29 @@ function updateSummary() {
         document.getElementById(`junior-${status.toLowerCase().replace(/ /g, "-")}`).textContent = summaryJunior[status];
     });
 }
+// Function to save table data to Local Storage
+function saveData() {
+    const seniorRows = document.querySelector("#senior-table tbody").innerHTML;
+    const juniorRows = document.querySelector("#junior-table tbody").innerHTML;
+    localStorage.setItem("seniorData", seniorRows);
+    localStorage.setItem("juniorData", juniorRows);
+    alert("Data Saved Successfully!");
+}
+
+// Function to load saved data on page load
+function loadData() {
+    if (localStorage.getItem("seniorData")) {
+        document.querySelector("#senior-table tbody").innerHTML = localStorage.getItem("seniorData");
+    }
+    if (localStorage.getItem("juniorData")) {
+        document.querySelector("#junior-table tbody").innerHTML = localStorage.getItem("juniorData");
+    }
+}
+
+// Load data when the page loads
+window.onload = function () {
+    loadData();
+};
+
+// Attach saveData function to Save button
+document.getElementById("save-button").addEventListener("click", saveData);
