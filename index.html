@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AR Section Parade State as on <span id="current-date"></span></title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>AR Section Parade State as on <span id="current-date"></span></h1>
+
+        <!-- Senior Sailors Table -->
+        <h2>Senior Sailors</h2>
+        <table id="senior-table">
+            <thead>
+                <tr>
+                    <th>Serial No.</th>
+                    <th>Name</th>
+                    <th>Rank</th>
+                    <th>Personnel No.</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+        <button onclick="addRow('senior-table')">Add Senior</button>
+
+        <!-- Junior Sailors Table -->
+        <h2>Junior Sailors</h2>
+        <table id="junior-table">
+            <thead>
+                <tr>
+                    <th>Serial No.</th>
+                    <th>Name</th>
+                    <th>Rank</th>
+                    <th>Personnel No.</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+        <button onclick="addRow('junior-table')">Add Junior</button>
+
+        <!-- Summary Table -->
+        <h2>Summary</h2>
+        <table class="summary-table">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Borne Strength</th>
+                    <th>Present</th>
+                    <th>Leave</th>
+                    <th>TY Duty</th>
+                    <th>GD In</th>
+                    <th>GD Out</th>
+                    <th>Duty</th>
+                    <th>Duty Off</th>
+                    <th>Misc</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><b>Senior</b></td>
+                    <td id="senior-borne">0</td>
+                    <td id="senior-present">0</td>
+                    <td id="senior-leave">0</td>
+                    <td id="senior-ty-duty">0</td>
+                    <td id="senior-gd-in">0</td>
+                    <td id="senior-gd-out">0</td>
+                    <td id="senior-duty">0</td>
+                    <td id="senior-duty-off">0</td>
+                    <td id="senior-misc">0</td>
+                </tr>
+                <tr>
+                    <td><b>Junior</b></td>
+                    <td id="junior-borne">0</td>
+                    <td id="junior-present">0</td>
+                    <td id="junior-leave">0</td>
+                    <td id="junior-ty-duty">0</td>
+                    <td id="junior-gd-in">0</td>
+                    <td id="junior-gd-out">0</td>
+                    <td id="junior-duty">0</td>
+                    <td id="junior-duty-off">0</td>
+                    <td id="junior-misc">0</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Save & Update Summary Button -->
+        <button id="save-button" onclick="updateSummary()">Save & Update Summary</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
